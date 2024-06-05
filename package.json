@@ -1,0 +1,19 @@
+{
+  "name": "nodejs-crash-2024",
+  "version": "1.0.0",
+  "description": "Nodejs Crash Course Code 2024",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "author": "Hamzah Saeed",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^3.1.1"
+  },
+  "dependencies": {
+    "express": "^4.19.2",
+    "url": "^0.11.3"
+  }
+}
