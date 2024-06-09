@@ -8005,22 +8005,6 @@
     "last_name": "Raja",
     "email": "maira@dnjs.com",
     "gender": "Female",
-    "job_title": "Industrial Designer"
-  },
-  {
-    "id": 1003,
-    "first_name": "Ahmed",
-    "last_name": "Raja",
-    "email": "ahmed@dnjs.com",
-    "gender": "Male",
-    "job_title": "Intermediate"
-  },
-  {
-    "id": 1003,
-    "first_name": "Altaf",
-    "last_name": "Raja",
-    "email": "altaf@dnjs.com",
-    "gender": "Male",
-    "job_title": "Major"
+    "job_title": "Undergrad"
   }
 ]

@@ -58,8 +58,24 @@ app
     return res.json(user);
   })
   .patch((req, res) => {
-    // TODO: Edit the user with id
-    return res.json({ status: 'pending' });
+    const id = Number(req.params.id);
+    const userIndex = users.findIndex((user) => user.id === id);
+
+    if (userIndex !== -1) {
+      const updatedUser = { ...users[userIndex], ...req.body }; // Merge original and updated data
+      users[userIndex] = updatedUser;
+
+      fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
+        if (err) {
+          console.error("Error writing to file:", err);
+          return res.status(500).json({ status: 'error' });
+        }
+        return res.json({ status: 'success' });
+      });
+    } else {
+      // User not found
+      return res.status(404).json({ status: 'error', message: 'User not found' });
+    }
   })
   .delete((req, res) => {
     const id = Number(req.params.id);
