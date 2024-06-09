@@ -23,6 +23,14 @@ const PORT = 8000;
 
 // Middleware - Plugin
 app.use(express.urlencoded({ extended: false }));
+app.use((req, res, next) => {
+  fs.appendFile(
+    "logs.txt",
+    `${Date.now()}: ${req.ip} ${req.method}: ${req.path}\n`,
+    (err, data) => {
+      next();
+    });
+})
 
 // Routes
 

@@ -19,3 +19,7 @@
 1717348309057: /favicon.ico New Req Received
 1717348323576: /about?name=Hamza New Req Received
 1717348323603: /favicon.ico New Req Received
+1717938187044: GET: /api/users
+1717938246307: GET: /api/users/1002
+1717938368667: POST: /api/users
+1717938473456: ::1 GET: /api/users/
