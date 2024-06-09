@@ -15,10 +15,14 @@
 // console.log(`Posts length: ${getPostsLength()}`)
 
 const express = require("express");
+const fs = require("fs");
 const users = require("./MOCK_DATA.json");
 
 const app = express();
 const PORT = 8000;
+
+// Middleware - Plugin
+app.use(express.urlencoded({ extended: false }));
 
 // Routes
 
@@ -55,8 +59,11 @@ app
   });
 
 app.post('/api/users', (req, res) => {
-  // TODO: Create new user
-  return res.json({ status: 'pending' });
+  const body = req.body;
+  users.push({ id: users.length + 1, ...body });
+  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+    return res.json({ status: 'success', id: users.length });
+  })
 });
 
 

@@ -7998,5 +7998,29 @@
     "email": "awattersrr@squarespace.com",
     "gender": "Male",
     "job_title": "Pharmacist"
+  },
+  {
+    "id": 1001,
+    "first_name": "Hamzah",
+    "last_name": "Saeed",
+    "email": "hazmadh@dnjs.com",
+    "gender": "Male",
+    "job_title": "Software Dev"
+  },
+  {
+    "id": 1002,
+    "first_name": "Maira",
+    "last_name": "Raja",
+    "email": "maira@dnjs.com",
+    "gender": "Female",
+    "job_title": "Industrial Designer"
+  },
+  {
+    "id": 1003,
+    "first_name": "Ahmed",
+    "last_name": "Raja",
+    "email": "ahmed@dnjs.com",
+    "gender": "Male",
+    "job_title": "Intermediate"
   }
 ]
