@@ -54,8 +54,22 @@ app
     return res.json({ status: 'pending' });
   })
   .delete((req, res) => {
-    // TODO: Delete the user with id
-    return res.json({ status: 'pending' });
+    const id = Number(req.params.id);
+    const userIndex = users.findIndex((user) => user.id === id);
+    if (userIndex !== -1) {
+      // User found, remove from array
+      users.splice(userIndex, 1);
+      fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err) => {
+        if (err) {
+          console.error("Error writing to file:", err);
+          return res.status(500).json({ status: 'error' });
+        }
+        return res.json({ status: 'success' });
+      });
+    } else {
+      // User not found
+      return res.status(404).json({ status: 'error', message: 'User not found' });
+    }
   });
 
 app.post('/api/users', (req, res) => {
